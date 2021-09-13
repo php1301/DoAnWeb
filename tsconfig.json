@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2015",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "skipLibCheck": true,
-        "strict": true,
+        "strict": false,
         "forceConsistentCasingInFileNames": true,
         "noEmit": true,
         "esModuleInterop": true,
@@ -22,9 +22,28 @@
             "@styles/*": ["src/styles/*"],
             "@styles": ["src/styles"],
             "@components/icons/*": ["src/components/icons/*"],
-            "@components/icons": ["src/components/icons"]
+            "@components/icons": ["src/components/icons"],
+            "@services/*": ["src/services/*"],
+            "@services": ["src/services"],
+            "@graphqlTypes/*": ["__generated__/*"],
+            "@graphqlTypes": ["__generated__"],
+            "@redux/*": ["src/redux/*"],
+            "@redux": ["src/redux"],
+            "@i18n": ["./i18n"],
+            "@test/*": ["test/*"],
+            "@test": ["test"],
+            "@containers/*": ["src/containers/*"],
+            "@contexts/*": ["src/contexts/*"],
+            "@framework/*": ["src/framework/basic-rest/*"],
+            "@settings/*": ["src/settings/*"],
+            "@utils/*": ["src/utils/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules"]
+    "exclude": [
+        "node_modules",
+        "__generated__/globalTypes.ts",
+        "test/*",
+        "cypress/*"
+    ]
 }

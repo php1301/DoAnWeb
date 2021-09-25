@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "clean": "npx rimraf \"{.next,dist,build,out}\"",
         "start": "next start",
         "svgr": "npx @svgr/cli -d src/components/icons --ignore-existing --icon --typescript public/icons",
         "build:analyze": "ANALYZE=true npm run build",

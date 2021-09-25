@@ -32,6 +32,8 @@
             "@i18n": ["./i18n"],
             "@test/*": ["test/*"],
             "@test": ["test"],
+            "@hooks/*": ["src/hooks/*"],
+            "@hooks": ["src/hooks"],
             "@containers/*": ["src/containers/*"],
             "@contexts/*": ["src/contexts/*"],
             "@framework/*": ["src/framework/basic-rest/*"],
@@ -39,7 +41,7 @@
             "@utils/*": ["src/utils/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/contexts/global-context.js"],
     "exclude": [
         "node_modules",
         "__generated__/globalTypes.ts",

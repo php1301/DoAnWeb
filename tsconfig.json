@@ -41,7 +41,7 @@
             "@utils/*": ["src/utils/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/contexts/global-context.js"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/contexts/global-context.js", "src/pages/search-list.js"],
     "exclude": [
         "node_modules",
         "__generated__/globalTypes.ts",

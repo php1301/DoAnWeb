@@ -8,7 +8,7 @@ const CartContext = React.createContext<any>({});
 const defaultItems = [
     {
         id: "p1",
-        title: "Amazon Echo Super Extra Bass Home System",
+        title: "Amazon  Echo Super Extra Bass Home System",
         img: imgP1,
         qty: 2,
         price: 70,

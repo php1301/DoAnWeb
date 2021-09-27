@@ -15,7 +15,7 @@ const defaultItems = [
     },
     {
         id: "p2",
-        title: "Apple AirPods with Wired Charging Case",
+        title: "Apple AirPods with Wired Charging Case ",
         img: imgP2,
         qty: 1,
         price: 150,

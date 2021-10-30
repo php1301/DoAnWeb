@@ -8,6 +8,8 @@ import { useWindowSize } from "@hooks/index";
 import GlobalContext from "@contexts/global-context";
 import Offcanvas from "@components/offcanvas/offcanvas";
 import NestedMenu from "@components/nested-menus/nested-menus";
+import { useLogoutMutation } from "@apis/auth/use-logout";
+import { useUI } from "@contexts/ui.context";
 import { device } from "@utils/index";
 import Logo from "@components/logo/logo";
 import { menuItems } from "./menuItems";
@@ -53,7 +55,8 @@ const Header: FC<{ isDark?: boolean }> = () => {
     const gContext = useContext(GlobalContext);
     const [showScrolling, setShowScrolling] = useState(false);
     const [showReveal, setShowReveal] = useState(false);
-
+    const { isAuthorized } = useUI();
+    const { mutate: logout } = useLogoutMutation();
     const size = useWindowSize();
 
     useScrollPosition(({ prevPos, currPos }) => {
@@ -303,7 +306,7 @@ const Header: FC<{ isDark?: boolean }> = () => {
                             </div>
                         )}
 
-                        {gContext.header.button === "profile" && (
+                        {isAuthorized && (
                             <div className="header-btn-devider ml-auto ml-lg-5 pl-2 d-none d-xs-flex align-items-center">
                                 <div>
                                     <Link href="/#">
@@ -341,11 +344,12 @@ const Header: FC<{ isDark?: boolean }> = () => {
                                                         Edit Profile
                                                     </a>
                                                 </Link>
-                                                <Link href="/#">
-                                                    <a className=" dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase">
-                                                        Log Out
-                                                    </a>
-                                                </Link>
+                                                <a
+                                                    onClick={() => logout()}
+                                                    className=" dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase"
+                                                >
+                                                    Log Out
+                                                </a>
                                             </Dropdown.Menu>
                                         ) : (
                                             <div
@@ -362,11 +366,12 @@ const Header: FC<{ isDark?: boolean }> = () => {
                                                         Edit Profile
                                                     </a>
                                                 </Link>
-                                                <Link href="/#">
-                                                    <a className=" dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase">
-                                                        Log Out
-                                                    </a>
-                                                </Link>
+                                                <a
+                                                    onClick={() => logout()}
+                                                    className=" dropdown-item py-2 text-red font-size-3 font-weight-semibold line-height-1p2 text-uppercase"
+                                                >
+                                                    Log Out
+                                                </a>
                                             </div>
                                         )}
                                     </Dropdown>
@@ -374,7 +379,7 @@ const Header: FC<{ isDark?: boolean }> = () => {
                             </div>
                         )}
 
-                        {gContext.header.button === "account" && (
+                        {!isAuthorized && (
                             <div className="header-btns header-btn-devider ml-auto pr-2 ml-lg-6 d-none d-xs-flex">
                                 <a
                                     className="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset"

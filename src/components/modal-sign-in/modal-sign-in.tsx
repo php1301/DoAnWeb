@@ -1,7 +1,10 @@
+/* eslint-disable no-useless-escape */
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { Modal } from "react-bootstrap";
 import GlobalContext from "@contexts/global-context";
+import { useLoginMutation, LoginInputType } from "@apis/auth/use-login";
+import { useForm } from "react-hook-form";
 
 const ModalStyled = styled(Modal)`
     /* &.modal {
@@ -11,15 +14,34 @@ const ModalStyled = styled(Modal)`
 
 const ModalSignIn = (props) => {
     const [showPass, setShowPass] = useState(true);
+    const { mutate: login, isLoading } = useLoginMutation();
     const gContext = useContext(GlobalContext);
-
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<LoginInputType>({
+        mode: "all",
+    });
     const handleClose = () => {
         gContext.toggleSignInModal();
+    };
+    const handleSignUp = () => {
+        handleClose();
+        gContext.toggleSignUpModal();
     };
 
     const togglePassword = () => {
         setShowPass(!showPass);
     };
+
+    function onSubmit({ email, password, remember_me }: LoginInputType) {
+        login({
+            email,
+            password,
+            remember_me,
+        });
+    }
 
     return (
         <ModalStyled
@@ -74,7 +96,7 @@ const ModalSignIn = (props) => {
                         </div>
                         <div className="col-lg-7 col-md-6">
                             <div className="bg-white-2 h-100 px-11 pt-11 pb-7">
-                                <div className="row">
+                                {/* <div className="row">
                                     <div className="col-4 col-xs-12">
                                         <a
                                             href="/#"
@@ -113,8 +135,12 @@ const ModalSignIn = (props) => {
                                     <span className="font-size-3 line-height-reset ">
                                         Or
                                     </span>
-                                </div>
-                                <form action="/">
+                                </div> */}
+                                <form
+                                    onSubmit={handleSubmit(onSubmit)}
+                                    noValidate
+                                >
+                                    {" "}
                                     <div className="form-group">
                                         <label
                                             htmlFor="email"
@@ -126,8 +152,20 @@ const ModalSignIn = (props) => {
                                             type="email"
                                             className="form-control"
                                             placeholder="example@gmail.com"
+                                            {...register("email", {
+                                                required: "Yêu cầu nhập email",
+                                                pattern: {
+                                                    value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                                    message: "Format email sai",
+                                                },
+                                            })}
                                             id="email"
                                         />
+                                        {errors.email?.message && (
+                                            <p className="my-2 text-xs text-red-500">
+                                                {errors.email?.message}
+                                            </p>
+                                        )}
                                     </div>
                                     <div className="form-group">
                                         <label
@@ -143,6 +181,10 @@ const ModalSignIn = (props) => {
                                                         ? "password"
                                                         : "text"
                                                 }
+                                                {...register("password", {
+                                                    required:
+                                                        "Yêu cầu nhập password",
+                                                })}
                                                 className="form-control"
                                                 id="password"
                                                 placeholder="Enter password"
@@ -160,6 +202,11 @@ const ModalSignIn = (props) => {
                                                 </span>
                                             </a>
                                         </div>
+                                        {errors.password?.message && (
+                                            <p className="my-2 text-xs text-red-500">
+                                                {errors.password?.message}
+                                            </p>
+                                        )}
                                     </div>
                                     <div className="form-group d-flex flex-wrap justify-content-between">
                                         <label
@@ -184,13 +231,20 @@ const ModalSignIn = (props) => {
                                         </a>
                                     </div>
                                     <div className="form-group mb-8">
-                                        <button className="btn btn-primary btn-medium w-100 rounded-5 text-uppercase">
+                                        <button
+                                            type="submit"
+                                            disabled={isLoading}
+                                            className="btn btn-primary btn-medium w-100 rounded-5 text-uppercase"
+                                        >
                                             Log in{" "}
                                         </button>
                                     </div>
                                     <p className="font-size-4 text-center heading-default-color">
                                         Don’t have an account?{" "}
-                                        <a href="/#" className="text-primary">
+                                        <a
+                                            onClick={handleSignUp}
+                                            className="text-primary cursor-pointer"
+                                        >
                                             Create a free account
                                         </a>
                                     </p>

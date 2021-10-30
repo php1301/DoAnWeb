@@ -20,7 +20,7 @@ module.exports = {
                 black: "#000",
                 white: "#fff",
                 linen: "#FBF1E9",
-                secondary: "#d0af66",
+                secondary: "#008a5b",
                 linenSecondary: "#ECE7E3",
                 olive: "#3D9970",
                 maroon: "#B03060",
@@ -102,5 +102,6 @@ module.exports = {
         require("@tailwindcss/forms")({
             strategy: "class",
         }),
+        require("tailwindcss-rtl"),
     ],
 };

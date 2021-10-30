@@ -8,14 +8,14 @@ const CartContext = React.createContext<any>({});
 const defaultItems = [
     {
         id: "p1",
-        title: "Amazon Echo Super Extra Bass Home System",
+        title: "Amazon  Echo Super Extra Bass Home System",
         img: imgP1,
         qty: 2,
         price: 70,
     },
     {
         id: "p2",
-        title: "Apple AirPods with Wired Charging Case",
+        title: "Apple AirPods with Wired Charging Case ",
         img: imgP2,
         qty: 1,
         price: 150,

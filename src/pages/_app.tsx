@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate } from "react-query/hydration";
 import { ToastContainer } from "react-toastify";
-
+import { ManagedUIContext } from "@contexts/ui.context";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "@components/layout/layout";
 import { GlobalProvider } from "@contexts/global-context";
@@ -28,7 +28,7 @@ import "@public/assets/fonts/fontawesome-5/css/all.css";
 import "@styles/scss/bootstrap.scss";
 import "@styles/scss/main.scss";
 // base css file
-// import "@styles/tailwind.css";
+import "@styles/tailwind.css";
 // const Noop: React.FC = ({ children }) => <>{children}</>;
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -45,21 +45,23 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 <Hydrate state={pageProps.dehydratedState}>
                     {/* <DefaultSeo /> */}
                     <GlobalProvider>
-                        <NextNProgress
-                            color="#d0af66"
-                            startPosition={0.3}
-                            stopDelayMs={200}
-                            height={3}
-                            showOnShallow={true}
-                            options={{
-                                easing: "ease",
-                                speed: 500,
-                            }}
-                        />
-                        <ReactQueryDevtools initialIsOpen={false} />
-                        <Layout pageContext={{ layout: "bare" }}>
-                            <Component {...pageProps} key={router.route} />
-                        </Layout>
+                        <ManagedUIContext>
+                            <NextNProgress
+                                color="#008a5b"
+                                startPosition={0.3}
+                                stopDelayMs={200}
+                                height={3}
+                                showOnShallow={true}
+                                options={{
+                                    easing: "ease",
+                                    speed: 500,
+                                }}
+                            />
+                            <ReactQueryDevtools initialIsOpen={false} />
+                            <Layout pageContext={{ layout: "bare" }}>
+                                <Component {...pageProps} key={router.route} />
+                            </Layout>
+                        </ManagedUIContext>
                     </GlobalProvider>
                     <ToastContainer />{" "}
                 </Hydrate>
@@ -72,21 +74,23 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 <Hydrate state={pageProps.dehydratedState}>
                     {/* <DefaultSeo /> */}
                     <GlobalProvider>
-                        <NextNProgress
-                            color="#d0af66"
-                            startPosition={0.3}
-                            stopDelayMs={200}
-                            height={3}
-                            showOnShallow={true}
-                            options={{
-                                easing: "ease",
-                                speed: 500,
-                            }}
-                        />
-                        <ReactQueryDevtools initialIsOpen={false} />
-                        <Layout pageContext={{ layout: "dashboard" }}>
-                            <Component {...pageProps} key={router.route} />
-                        </Layout>
+                        <ManagedUIContext>
+                            <NextNProgress
+                                color="#008a5b"
+                                startPosition={0.3}
+                                stopDelayMs={200}
+                                height={3}
+                                showOnShallow={true}
+                                options={{
+                                    easing: "ease",
+                                    speed: 500,
+                                }}
+                            />
+                            <ReactQueryDevtools initialIsOpen={false} />
+                            <Layout pageContext={{ layout: "dashboard" }}>
+                                <Component {...pageProps} key={router.route} />
+                            </Layout>
+                        </ManagedUIContext>
                     </GlobalProvider>
                     <ToastContainer />{" "}
                 </Hydrate>
@@ -97,23 +101,25 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <QueryClientProvider client={queryClient}>
             <Hydrate state={pageProps.dehydratedState}>
                 <GlobalProvider>
-                    {/* <DefaultSeo /> */}
-                    <NextNProgress
-                        color="#d0af66"
-                        startPosition={0.3}
-                        stopDelayMs={200}
-                        height={3}
-                        showOnShallow={true}
-                        options={{
-                            easing: "ease",
-                            speed: 500,
-                        }}
-                    />
-                    <ReactQueryDevtools initialIsOpen={false} />
-                    <Layout pageContext={{}}>
-                        <Component {...pageProps} key={router.route} />
-                    </Layout>
-                    <ToastContainer />{" "}
+                    <ManagedUIContext>
+                        {/* <DefaultSeo /> */}
+                        <NextNProgress
+                            color="#008a5b"
+                            startPosition={0.3}
+                            stopDelayMs={200}
+                            height={3}
+                            showOnShallow={true}
+                            options={{
+                                easing: "ease",
+                                speed: 500,
+                            }}
+                        />
+                        <ReactQueryDevtools initialIsOpen={false} />
+                        <Layout pageContext={{}}>
+                            <Component {...pageProps} key={router.route} />
+                        </Layout>
+                        <ToastContainer />{" "}
+                    </ManagedUIContext>
                 </GlobalProvider>
             </Hydrate>
         </QueryClientProvider>

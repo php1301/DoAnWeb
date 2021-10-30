@@ -1,5 +1,26 @@
 export type ViecLam = {
     id: number;
+    tenVIecLam: string;
+    id_cty: number;
+    id_nn: number;
+    id_kv: number;
+    ngaydang: string;
+    ngayhethang: string;
+    mucLuong: number;
+    tinhChat: string;
+    moTa: string;
+    yeuCau: string;
+    soLuong: number;
+    diaChi: string;
+    bangCap: string;
+    kinhNghiem: string;
+    viTri: string;
+    chucVu: string;
+    gioiTinh: string;
+    tuoi: string;
+    trangthai: number;
+    created_at: Date;
+    updated_at: Date;
 };
 export interface Filter {
     categories: { value: string; name: string }[];

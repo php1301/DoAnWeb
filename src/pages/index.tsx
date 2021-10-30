@@ -7,14 +7,26 @@ import Hero from "src/sections/landing/Hero";
 import Pricing from "src/sections/landing/Pricing";
 import Services from "src/sections/landing/Services";
 import Slider from "src/sections/landing/Slider";
+import { QueryClient } from "react-query";
+import { dehydrate } from "react-query/hydration";
+import { useRouter } from "next/router";
+import {
+    fetchViecLamMoi,
+    useFetchViecLamMoi,
+} from "@apis/ViecLam/get-vieclam-moi";
+import { API_ENDPOINTS } from "@apis/utils/api-endpoints";
+import { GetStaticProps } from "next";
 
 const IndexPage = () => {
+    const { data, isLoading } = useFetchViecLamMoi();
+    const { query } = useRouter();
+    const { viecLams, count } = data ?? {};
     return (
         <>
             <PageWrapper>
                 <Hero />
                 <Services />
-                <FeaturedJobs />
+                <FeaturedJobs viecLams={viecLams} count={count} />
                 <Content />
                 <Content1 />
                 <Slider />
@@ -24,3 +36,16 @@ const IndexPage = () => {
     );
 };
 export default IndexPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+    const queryClient = new QueryClient();
+    await queryClient.prefetchQuery(
+        API_ENDPOINTS.VIECLAM_NEWEST,
+        fetchViecLamMoi,
+    );
+    return {
+        props: {
+            dehydratedState: dehydrate(queryClient),
+        },
+        revalidate: 10,
+    };
+};

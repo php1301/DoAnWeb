@@ -12,7 +12,7 @@ import imgB5 from "@public/assets/image/l1/png/feature-brand-5.png";
 import imgB6 from "@public/assets/image/l1/png/feature-brand-6.png";
 
 const defaultCountries = [
-    { value: "sp", label: "Singapore" },
+    { value: 6, label: "Đà Nẵng" },
     { value: "bd", label: "Bangladesh" },
     { value: "usa", label: "United States of America" },
     { value: "uae", label: "United Arab Emirates" },

@@ -18,15 +18,17 @@ import { API_ENDPOINTS } from "@apis/utils/api-endpoints";
 import { GetStaticProps } from "next";
 
 const IndexPage = () => {
-    const { data, isLoading } = useFetchViecLamMoi();
     const { query } = useRouter();
+    const { data, isLoading } = useFetchViecLamMoi();
     const { viecLams, count } = data ?? {};
     return (
         <>
             <PageWrapper>
                 <Hero />
                 <Services />
-                <FeaturedJobs viecLams={viecLams} count={count} />
+                {!isLoading && (
+                    <FeaturedJobs viecLams={viecLams} count={count} />
+                )}
                 <Content />
                 <Content1 />
                 <Slider />
@@ -41,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     await queryClient.prefetchQuery(
         API_ENDPOINTS.VIECLAM_NEWEST,
         fetchViecLamMoi,
+        // async () => fetchBlog(query?.post as unknown as string),
     );
     return {
         props: {
@@ -49,3 +52,25 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         revalidate: 10,
     };
 };
+
+// export const getServerSideProps: GetServerSideProps = async ({
+//     locale,
+//     query,
+// }) => {
+//     const queryClient = new QueryClient();
+//     await queryClient.prefetchQuery(
+//         [API_ENDPOINTS.BLOG, query?.post as unknown as string],
+//         async () => fetchBlog(query?.post as unknown as string),
+//     );
+//     return {
+//         props: {
+//             ...(await serverSideTranslations(locale!, [
+//                 "common",
+//                 "forms",
+//                 "menu",
+//                 "footer",
+//             ])),
+//             dehydratedState: dehydrate(queryClient),
+//         },
+//     };
+// };

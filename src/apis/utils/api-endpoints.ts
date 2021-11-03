@@ -34,6 +34,7 @@ export const API_ENDPOINTS = {
     ORDERS: "/api/orders.json",
     ORDER: "/orders/details",
     BLOG: "/client/blogs",
+    VIECLAM_SEARCH: "/viec-lam/tim-kiem",
     VIECLAM_NEWEST: "/viec-lam/moi",
     VIECLAM_LIST: "/viec-lam",
     VIECLAM_CHITIET: "/viec-lam/chi-tiet",

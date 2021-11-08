@@ -16,14 +16,12 @@ const Services = () => {
                         <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
                             <div className="text-center mb-8 mb-lg-18 px-xl-9 px-xxl-7">
                                 <h2 className="font-size-9 mb-6">
-                                    Easy steps to
-                                    <br className="d-none d-sm-block" /> land
-                                    your next job
+                                    Các bước đơn giản
+                                    <br className="d-none d-sm-block" /> 
+                                     để tìm kiếm một việc làm
                                 </h2>
                                 <p className="font-size-4 text-default-color px-xs-9 px-md-0">
-                                    Creating a beautiful job website is not easy
-                                    always. To make your life easier, we are
-                                    introducing Justcamp template.
+                                    Cùng với MIJOB , tìm việc ngay thôi !
                                 </p>
                             </div>
                         </div>
@@ -43,7 +41,7 @@ const Services = () => {
                                 </div>
                                 <div className="services-content">
                                     <h3 className="font-size-6 mb-7">
-                                        Register Your Account
+                                        Đăng ký tài khoản
                                     </h3>
                                     <p className="font-size-4 text-default-color">
                                         Capitalize on low hanging fruit to
@@ -62,7 +60,7 @@ const Services = () => {
                                 </div>
                                 <div className="services-content">
                                     <h3 className="font-size-6 mb-7">
-                                        Apply for New Jobs
+                                        Ứng tuyển
                                     </h3>
                                     <p className="font-size-4 text-default-color">
                                         Leverage agile frameworks to provide a
@@ -81,7 +79,7 @@ const Services = () => {
                                 </div>
                                 <div className="services-content">
                                     <h3 className="font-size-6 mb-7">
-                                        Get Hired Immediately
+                                        Được nhận ngay lập tức
                                     </h3>
                                     <p className="font-size-4 text-default-color">
                                         Capitalize on low hanging fruit to

@@ -7,9 +7,9 @@ import imgC1 from "@public/assets/image/l3/png/hero-image-1.png";
 import imgC2 from "@public/assets/image/l3/png/hero-image-2.png";
 
 const defaultCountries = [
-    { value: "sp", label: "Singapore" },
-    { value: "bd", label: "Bangladesh" },
-    { value: "usa", label: "United States of America" },
+    { value: "danang", label: "Đà Nẵng" },
+    { value: "hanoi", label: "Hà Nội" },
+    { value: "tphcm", label: "Thành Phố Hồ Chí Minh" },
     { value: "uae", label: "United Arab Emirates" },
     { value: "pk", label: "Pakistan" },
 ];
@@ -30,12 +30,12 @@ const Hero = () => {
                             <div className="row">
                                 <div className="col-md-8 col-sm-10">
                                     <h1 className="font-size-11 mb-12">
-                                        Get hired by the popular teams.
+                                        Tuyển dụng bởi các công ty hàng đầu !
                                     </h1>
                                     <p className="font-size-6">
-                                        Creating a beautiful job website is not
-                                        easy always. To make your life easier,
-                                        we are introducing Justcamp template.
+                                        Làm thế nào để bạn có thể gặp gỡ các nhà
+                                        tuyển dụng hàng đầu, hãy đến với chúng
+                                        tôi, MIJOB sẽ giúp bạn!
                                     </p>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@ const Hero = () => {
                                                     className="form-control focus-reset pl-13"
                                                     type="text"
                                                     id="keyword"
-                                                    placeholder="Type Job title, keywords"
+                                                    placeholder="Tìm kiếm, từ khóa"
                                                 />
                                                 <span className="h-100 w-px-50 pos-abs-tl d-flex align-items-center justify-content-center font-size-6">
                                                     <i className="icon icon-zoom-2 text-primary font-weight-bold"></i>

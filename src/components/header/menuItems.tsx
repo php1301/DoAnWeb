@@ -1,13 +1,24 @@
 export const menuItems = [
     {
-        name: "home",
+        name: "",
         label: "Home",
-        items: [
-            { name: "", label: "Home 1" },
-            { name: "landing-2", label: "Home 2" },
-            { name: "landing-3", label: "Home 3" },
-        ],
         isExternal: false,
+    },
+    {
+        name: "job-details",
+        label: "Job details",
+    },
+    {
+        name: "search-grid",
+        label: "search job",
+    },
+    {
+        name: "company-profile",
+        label: "Company Profile",
+    },
+    {
+        name: "contact",
+        label: "Contact",
     },
     {
         name: "pages",
@@ -19,7 +30,6 @@ export const menuItems = [
                 items: [
                     { name: "search-grid", label: "Job Grid" },
                     { name: "search-list", label: "Job List" },
-                    { name: "job-details", label: "Job Details" },
                 ],
             },
             {
@@ -55,12 +65,7 @@ export const menuItems = [
                 items: [
                     { name: "search-grid", label: "Search Grid" },
                     { name: "search-list", label: "Search List 01" },
-                    { name: "search-list-2", label: "Search List 02" },
                 ],
-            },
-            {
-                name: "company-profile",
-                label: "Company Profile",
             },
 
             {
@@ -70,15 +75,14 @@ export const menuItems = [
                     { name: "faq", label: "FAQ" },
                     { name: "404", label: "404" },
                     { name: "pricing", label: "Pricing" },
-                    { name: "contact", label: "Contact" },
                 ],
             },
         ],
         isExternal: false,
     },
-    {
-        name: "https://uxtheme.net/product-support/",
-        label: "Support",
-        isExternal: true,
-    },
+    // {
+    //     name: "https://uxtheme.net/product-support/",
+    //     label: "Support",
+    //     isExternal: true,
+    // },
 ];

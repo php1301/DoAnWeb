@@ -44,11 +44,11 @@ const Content1 = () => {
                             <div className="content-2 pl-xl-10 d-flex flex-column justify-content-center h-100 pt-lg-0 pt-15 pr-xl-10 pr-xxl-0">
                                 {/* <!-- content section title start --> */}
                                 <h2 className="font-size-8 mb-7 pr-xs-13  pr-md-0 pr-sm-8">
-                                    Over{" "}
+                                    Hơn{" "}
                                     <span className="text-green">
-                                        50k+ people
+                                        50k+ người
                                     </span>{" "}
-                                    landed their first job from Justcamp.
+                                    đã nhận được việc làm từ MIJOB.
                                 </h2>
                                 <p className="text-default-color font-size-5 mb-7 mb-lg-12 pr-xxl-13 pr-lg-0 pr-md-10">
                                     Leverage agile frameworks to provide a
@@ -60,7 +60,7 @@ const Content1 = () => {
                                 {/* <!-- content-2 btn start --> */}
                                 <Link href="/#">
                                     <a className="text-green font-weight-bold text-uppercase font-size-3">
-                                        Learn More{" "}
+                                        xem thêm{" "}
                                         <i className="fas fa-arrow-right ml-3"></i>
                                     </a>
                                 </Link>

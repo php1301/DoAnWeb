@@ -20,7 +20,7 @@ const Content = () => {
                             <div className="position-relative d-flex flex-column justify-content-center h-100 pr-xl-8 pr-0 mt-5 mt-lg-0">
                                 {/* <!-- content-2 section title start --> */}
                                 <h2 className="font-size-8 mb-7 pr-xs-13  pr-md-0 pr-sm-8">
-                                    Join companies from anywhere in the world.
+                                    Tham gia vào các công ty từ khắp mọi nơi.
                                 </h2>
                                 <p className="text-default-color font-size-5 mb-7 mb-lg-12 pr-xxl-13 pr-lg-0 pr-md-10">
                                     Leverage agile frameworks to provide a
@@ -32,7 +32,7 @@ const Content = () => {
                                 {/* <!-- content-2 btn start --> */}
                                 <Link href="/#">
                                     <a className="text-green font-weight-bold text-uppercase font-size-3">
-                                        Learn More{" "}
+                                        Xem thêm{" "}
                                         <i className="fas fa-arrow-right ml-3"></i>
                                     </a>
                                 </Link>

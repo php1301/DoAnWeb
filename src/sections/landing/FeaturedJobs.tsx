@@ -41,7 +41,10 @@ const FeaturedJobs: FC<FeaturedJobsProps> = ({ viecLams, count }) => {
                     >
                         {viecLams?.map((vl) => {
                             return (
-                                <div className="col-xl-4 col-lg-6 col-md-6 col-sm-11 mb-9">
+                                <div
+                                    key={vl.id}
+                                    className="col-xl-4 col-lg-6 col-md-6 col-sm-11 mb-9"
+                                >
                                     {/* <!-- Single Featured Job --> */}
                                     <div className="pt-9 px-xl-9 px-lg-7 px-7 pb-7 light-mode-texts bg-white rounded hover-shadow-3 h-full">
                                         <div className="media align-items-center">

@@ -5,16 +5,37 @@ import Select from "@components/Core/Select";
 
 import imgC1 from "@public/assets/image/l3/png/hero-image-1.png";
 import imgC2 from "@public/assets/image/l3/png/hero-image-2.png";
-
+import {
+    useSearchViecLamMutation,
+    SearchViecLamInputType,
+} from "@apis/ViecLam/use-search-vieclam";
+import { useForm } from "react-hook-form";
 const defaultCountries = [
     { value: 6, label: "Đà Nẵng" },
     { value: 7, label: "Hà Nội" },
     { value: 5, label: "Thành Phố Hồ Chí Minh" },
-    { value: "uae", label: "United Arab Emirates" },
-    { value: "pk", label: "Pakistan" },
 ];
 
 const Hero = () => {
+    const { mutate: search, isLoading,  } = useSearchViecLamMutation();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<SearchViecLamInputType>({
+        mode: "all",
+    });
+
+    function onSubmit({ id_kv, tenViecLam }: SearchViecLamInputType) {
+        search({
+            id_kv: 6,
+            tenViecLam,
+        });
+        if (!isLoading) {
+            console.log(data);
+        }
+    }
+
     return (
         <>
             {/* <!-- Hero Area --> */}
@@ -41,7 +62,7 @@ const Hero = () => {
                             </div>
                             <div className="pt-12">
                                 <form
-                                    action="/"
+                                    onSubmit={handleSubmit(onSubmit)}
                                     className="search-form"
                                     data-aos="fade-right"
                                     data-aos-duration="1000"
@@ -53,6 +74,10 @@ const Hero = () => {
                                                 <input
                                                     className="form-control focus-reset pl-13"
                                                     type="text"
+                                                    {...register("tenViecLam", {
+                                                        required:
+                                                            "Yêu cầu nhập tên việc làm",
+                                                    })}
                                                     id="keyword"
                                                     placeholder="Tìm kiếm, từ khóa"
                                                 />
@@ -63,6 +88,7 @@ const Hero = () => {
                                             {/* <!-- .select-city starts --> */}
                                             <div className="form-group position-relative">
                                                 <Select
+                                                    // {...register("id_kv")}
                                                     options={defaultCountries}
                                                     className="pl-8 h-100 arrow-3 font-size-4 d-flex align-items-center w-100"
                                                     border={false}
@@ -75,7 +101,10 @@ const Hero = () => {
                                             {/* <!-- ./select-city ends --> */}
                                         </div>
                                         <div className="button-block">
-                                            <Button className="line-height-reset h-100 btn-submit w-100 text-uppercase">
+                                            <Button
+                                                type="submit"
+                                                className="line-height-reset h-100 btn-submit w-100 text-uppercase"
+                                            >
                                                 Search
                                             </Button>
                                         </div>

@@ -3,7 +3,7 @@ import { API_ENDPOINTS } from "@apis/utils/api-endpoints";
 import { useQuery } from "react-query";
 import { ViecLam } from "@apis/types";
 
-type NewestBlogs = {
+type NewestVieclams = {
     viecLams: ViecLam[];
     count: number;
 };
@@ -16,8 +16,9 @@ export const fetchViecLamMoi = async () => {
         count: data.viecLamList.total,
     };
 };
+
 export const useFetchViecLamMoi = () => {
-    return useQuery<NewestBlogs, Error>(
+    return useQuery<NewestVieclams, Error>(
         [API_ENDPOINTS.VIECLAM_NEWEST],
         () => fetchViecLamMoi(),
         { keepPreviousData: true },

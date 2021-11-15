@@ -7,9 +7,9 @@ import imgC1 from "@public/assets/image/l3/png/hero-image-1.png";
 import imgC2 from "@public/assets/image/l3/png/hero-image-2.png";
 
 const defaultCountries = [
-    { value: "danang", label: "Đà Nẵng" },
-    { value: "hanoi", label: "Hà Nội" },
-    { value: "tphcm", label: "Thành Phố Hồ Chí Minh" },
+    { value: 6, label: "Đà Nẵng" },
+    { value: 7, label: "Hà Nội" },
+    { value: 8, label: "Thành Phố Hồ Chí Minh" },
     { value: "uae", label: "United Arab Emirates" },
     { value: "pk", label: "Pakistan" },
 ];

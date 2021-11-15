@@ -9,7 +9,7 @@ import imgC2 from "@public/assets/image/l3/png/hero-image-2.png";
 const defaultCountries = [
     { value: 6, label: "Đà Nẵng" },
     { value: 7, label: "Hà Nội" },
-    { value: 8, label: "Thành Phố Hồ Chí Minh" },
+    { value: 5, label: "Thành Phố Hồ Chí Minh" },
     { value: "uae", label: "United Arab Emirates" },
     { value: "pk", label: "Pakistan" },
 ];

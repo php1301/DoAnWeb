@@ -1,20 +1,17 @@
-import React, { useState, useContext, FC } from "react";
-import styled from "styled-components";
-import { Container, Dropdown } from "react-bootstrap";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-import Link from "next/link";
-import Image from "next/image";
-import { useWindowSize } from "@hooks/index";
-import GlobalContext from "@contexts/global-context";
-import Offcanvas from "@components/offcanvas/offcanvas";
-import NestedMenu from "@components/nested-menus/nested-menus";
 import { useLogoutMutation } from "@apis/auth/use-logout";
-import { useUI } from "@contexts/ui.context";
-import { device } from "@utils/index";
 import Logo from "@components/logo/logo";
-import { menuItems } from "./menuItems";
-
+import GlobalContext from "@contexts/global-context";
+import { useUI } from "@contexts/ui.context";
+import { useWindowSize } from "@hooks/index";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import imgP from "@public/assets/image/header-profile.png";
+import { device } from "@utils/index";
+import Image from "next/image";
+import Link from "next/link";
+import React, { FC, useContext, useState } from "react";
+import { Container, Dropdown } from "react-bootstrap";
+import styled from "styled-components";
+import { menuItems } from "./menuItems";
 
 const SiteHeader = styled.header`
     .dropdown-toggle::after {

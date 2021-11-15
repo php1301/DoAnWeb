@@ -23,7 +23,7 @@ const FeaturedJobs: FC<FeaturedJobsProps> = ({ viecLams, count }) => {
                         <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
                             <div className="text-center mb-8 mb-lg-18 px-xl-9 px-xxl-7">
                                 <h2 className="font-size-9 mb-6">
-                                    Featured Jobs
+                                   Việc làm nổi bật
                                 </h2>
                                 <p className="font-size-4 text-default-color px-xs-9 px-md-0">
                                     Creating a beautiful job website is not easy

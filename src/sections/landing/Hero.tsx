@@ -12,10 +12,8 @@ import {
 import { useForm } from "react-hook-form";
 const defaultCountries = [
     { value: 6, label: "Đà Nẵng" },
-    { value: "bd", label: "Bangladesh" },
-    { value: "usa", label: "United States of America" },
-    { value: "uae", label: "United Arab Emirates" },
-    { value: "pk", label: "Pakistan" },
+    { value: 7, label: "Hà Nội" },
+    { value: 5, label: "Thành Phố Hồ Chí Minh" },
 ];
 
 const Hero = () => {
@@ -53,12 +51,12 @@ const Hero = () => {
                             <div className="row">
                                 <div className="col-md-8 col-sm-10">
                                     <h1 className="font-size-11 mb-12">
-                                        Get hired by the popular teams.
+                                        Tuyển dụng bởi các công ty hàng đầu !
                                     </h1>
                                     <p className="font-size-6">
-                                        Creating a beautiful job website is not
-                                        easy always. To make your life easier,
-                                        we are introducing Justcamp template.
+                                        Làm thế nào để bạn có thể gặp gỡ các nhà
+                                        tuyển dụng hàng đầu, hãy đến với chúng
+                                        tôi, MIJOB sẽ giúp bạn!
                                     </p>
                                 </div>
                             </div>
@@ -81,7 +79,7 @@ const Hero = () => {
                                                             "Yêu cầu nhập tên việc làm",
                                                     })}
                                                     id="keyword"
-                                                    placeholder="Type Job title, keywords"
+                                                    placeholder="Tìm kiếm, từ khóa"
                                                 />
                                                 <span className="h-100 w-px-50 pos-abs-tl d-flex align-items-center justify-content-center font-size-6">
                                                     <i className="icon icon-zoom-2 text-primary font-weight-bold"></i>

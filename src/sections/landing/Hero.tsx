@@ -17,7 +17,7 @@ const defaultCountries = [
 ];
 
 const Hero = () => {
-    const { mutate: search, isLoading,  } = useSearchViecLamMutation();
+    const { mutate: search, isLoading } = useSearchViecLamMutation();
     const {
         register,
         handleSubmit,

@@ -23,7 +23,7 @@ const FeaturedJobs: FC<FeaturedJobsProps> = ({ viecLams, count }) => {
                         <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
                             <div className="text-center mb-8 mb-lg-18 px-xl-9 px-xxl-7">
                                 <h2 className="font-size-9 mb-6">
-                                   Việc làm nổi bật
+                                    Việc làm nổi bật
                                 </h2>
                                 <p className="font-size-4 text-default-color px-xs-9 px-md-0">
                                     Creating a beautiful job website is not easy
@@ -49,7 +49,9 @@ const FeaturedJobs: FC<FeaturedJobsProps> = ({ viecLams, count }) => {
                                     <div className="pt-9 px-xl-9 px-lg-7 px-7 pb-7 light-mode-texts bg-white rounded hover-shadow-3 h-full">
                                         <div className="media align-items-center">
                                             <div className="square-52 bg-indigo mr-8 rounded">
-                                                <Link href="/#">
+                                                <Link
+                                                    href={`/job-details/${vl.id}`}
+                                                >
                                                     <a>
                                                         <img
                                                             src={imgF5.src}
@@ -59,13 +61,17 @@ const FeaturedJobs: FC<FeaturedJobsProps> = ({ viecLams, count }) => {
                                                 </Link>
                                             </div>
                                             <div>
-                                                <Link href="/#">
+                                                <Link
+                                                    href={`/job-details/${vl.id}`}
+                                                >
                                                     <a className="font-size-3 text-default-color line-height-2">
-                                                        {vl.id_cty}
+                                                        {vl.id}
                                                     </a>
                                                 </Link>
                                                 <h3 className="font-size-6 mb-0">
-                                                    <Link href="/#">
+                                                    <Link
+                                                        href={`/job-details/${vl.id}`}
+                                                    >
                                                         <a className="heading-default-color font-weight-semibold">
                                                             {vl.tenVIecLam}
                                                         </a>
@@ -76,7 +82,9 @@ const FeaturedJobs: FC<FeaturedJobsProps> = ({ viecLams, count }) => {
                                         <div className="d-flex pt-17">
                                             <ul className="list-unstyled mb-1 d-flex flex-wrap flex-col flex-1">
                                                 <li>
-                                                    <Link href="/#">
+                                                    <Link
+                                                        href={`/job-details/${vl.id}`}
+                                                    >
                                                         <a className="bg-regent-opacity-15 text-denim font-size-3 rounded-3 min-width-px-100 px-3 flex-all-center mr-6 h-px-33 mt-4">
                                                             <i className="icon icon-pin-3 mr-2 font-weight-bold"></i>{" "}
                                                             {vl.diaChi.slice(
@@ -88,7 +96,9 @@ const FeaturedJobs: FC<FeaturedJobsProps> = ({ viecLams, count }) => {
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link href="/#">
+                                                    <Link
+                                                        href={`/job-details/${vl.id}`}
+                                                    >
                                                         <a className="bg-regent-opacity-15 text-orange font-size-3 rounded-3 min-width-px-100 px-3 flex-all-center mr-6 h-px-33 mt-4">
                                                             <i className="fa fa-briefcase mr-2 font-weight-bold"></i>{" "}
                                                             {vl.tinhChat}
